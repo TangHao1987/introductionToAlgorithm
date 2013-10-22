@@ -1,6 +1,12 @@
-package introductiontoalgo.gettingstart;
+package introductiontoalgo.gettingstart.insertionsort;
 
-public class InsertionSort {
+/**
+ * This case demostrate the basic model of Insertion Sort
+ * please refer to the Psesudo code on page 18 of book for more reference
+ * @author Tang Hao
+ *
+ */
+public class OriginalModel {
 	public static void main(String[] args) {
 		// define your input in this array
 		int[] input = { 1, 10, 100, 56, 27, 42, 6 };
