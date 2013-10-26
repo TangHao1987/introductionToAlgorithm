@@ -3,14 +3,14 @@ package introductiontoalgo.gettingstart.designingalgorithms;
 import introductiontoalgo.common.CommonLogics;
 
 /**
- * This case is exactly same as basic model but using sentinel instance of checking if half array is out of boundary
+ * This case is exactly same as basic model
  * Main method use to run the logic
  * merge method and merge sort method contain main logic 
  * 
  * @author Tang Hao
  *
  */
-public class Exercises_2_3_1 extends CommonLogics{
+public class Exercises_2_3_2_MergeSortBasicModel extends CommonLogics{
 	public static void main(String [] args){
 		int [] inputArray = {3, 41 , 52 , 26 , 38 , 57 , 9 ,49};
 		printIntArray(inputArray, true);
@@ -47,11 +47,9 @@ public class Exercises_2_3_1 extends CommonLogics{
 	 * @param endPoint
 	 */
 	public static void merge(int [] array, int startPoint, int middlePoint, int endPoint){
-		int [] leftArray = new int [middlePoint - startPoint + 2] ;
-		int [] rightArray = new int [endPoint - middlePoint + 1] ;
-		//define sentinel
-		leftArray[middlePoint - startPoint + 1] = 10000;
-		rightArray[endPoint - middlePoint] = 10000;
+		int [] leftArray = new int [middlePoint - startPoint + 1] ;
+		int [] rightArray = new int [endPoint - middlePoint] ;
+		
 		//build leftArray and right Array
 		for(int i = startPoint; i <= endPoint ; i++){
 			if(i <= middlePoint)
@@ -64,7 +62,13 @@ public class Exercises_2_3_1 extends CommonLogics{
 		int leftIndex = 0;
 		int rightIndex = 0;
 		for(int i = startPoint; i <= endPoint ; i++){
-			if(rightArray[rightIndex] > leftArray[leftIndex]){
+			if(leftIndex >= leftArray.length){
+				array[i] = rightArray[rightIndex];
+				rightIndex ++;
+			}else if(rightIndex >= rightArray.length){
+				array[i] = leftArray[leftIndex];
+				leftIndex++;
+			}else if(rightArray[rightIndex] > leftArray[leftIndex]){
 				array[i]=leftArray[leftIndex];
 				leftIndex++;
 			}else{

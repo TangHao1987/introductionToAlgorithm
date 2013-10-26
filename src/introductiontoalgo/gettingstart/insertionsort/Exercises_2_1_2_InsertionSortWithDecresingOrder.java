@@ -1,12 +1,12 @@
 package introductiontoalgo.gettingstart.insertionsort;
 
 /**
- * This model is exactly same as Original Model but just specified the input to
- * A = [31,41,59,26,41,58]
+ * the Decreasing order simply apply the 'less than' rather than 'greater than' when comparing the key and output[innerIterator]  
+ * This example will still be using the input of Exercise 2.1_1
  * 
  * @author Tang Hao
  */
-public class Exercises_2_1_1 {
+public class Exercises_2_1_2_InsertionSortWithDecresingOrder {
 	public static void main(String[] args) {
 		// define your input in this array
 		int[] input = { 31, 41, 59, 26, 41, 58 };
@@ -24,7 +24,7 @@ public class Exercises_2_1_1 {
 			for (int iterator = 1; iterator < input.length; iterator++) {
 				int key = output[iterator];
 				int innerIterator = iterator - 1;
-				while (innerIterator >= 0 && output[innerIterator] > key) {
+				while (innerIterator >= 0 && output[innerIterator] < key) {
 					output[innerIterator + 1] = output[innerIterator];
 					innerIterator--;
 				}

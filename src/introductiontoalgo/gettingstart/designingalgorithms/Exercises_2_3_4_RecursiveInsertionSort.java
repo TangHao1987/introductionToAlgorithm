@@ -6,7 +6,7 @@ package introductiontoalgo.gettingstart.designingalgorithms;
  * @author Tang Hao
  *
  */
-public class Exercises_2_3_4 {
+public class Exercises_2_3_4_RecursiveInsertionSort {
 	public static void main(String[] args) {
 		int [] input = {3, 41 , 52 , 26, 38, 57, 9 , 49};
 		// output array

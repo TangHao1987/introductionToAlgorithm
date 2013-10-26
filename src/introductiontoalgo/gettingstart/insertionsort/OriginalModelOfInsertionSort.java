@@ -1,15 +1,15 @@
 package introductiontoalgo.gettingstart.insertionsort;
 
 /**
- * the Decreasing order simply apply the 'less than' rather than 'greater than' when comparing the key and output[innerIterator]  
- * This example will still be using the input of Exercise 2.1_1
- * 
+ * This case demostrate the basic model of Insertion Sort
+ * please refer to the Psesudo code on page 18 of book for more reference
  * @author Tang Hao
+ *
  */
-public class Exercises_2_1_2 {
+public class OriginalModelOfInsertionSort {
 	public static void main(String[] args) {
 		// define your input in this array
-		int[] input = { 31, 41, 59, 26, 41, 58 };
+		int[] input = { 1, 10, 100, 56, 27, 42, 6 };
 		// output array
 		int[] output = input;
 
@@ -24,11 +24,11 @@ public class Exercises_2_1_2 {
 			for (int iterator = 1; iterator < input.length; iterator++) {
 				int key = output[iterator];
 				int innerIterator = iterator - 1;
-				while (innerIterator >= 0 && output[innerIterator] < key) {
+				while (innerIterator >= 0 && output[innerIterator] > key) {
 					output[innerIterator + 1] = output[innerIterator];
 					innerIterator--;
 				}
-				output[innerIterator + 1] = key;
+				output[innerIterator+1] = key;
 			}
 		}
 

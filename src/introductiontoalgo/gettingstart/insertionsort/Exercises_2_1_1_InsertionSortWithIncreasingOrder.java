@@ -1,15 +1,15 @@
 package introductiontoalgo.gettingstart.insertionsort;
 
 /**
- * This case demostrate the basic model of Insertion Sort
- * please refer to the Psesudo code on page 18 of book for more reference
+ * This model is exactly same as Original Model but just specified the input to
+ * A = [31,41,59,26,41,58]
+ * 
  * @author Tang Hao
- *
  */
-public class OriginalModel {
+public class Exercises_2_1_1_InsertionSortWithIncreasingOrder {
 	public static void main(String[] args) {
 		// define your input in this array
-		int[] input = { 1, 10, 100, 56, 27, 42, 6 };
+		int[] input = { 31, 41, 59, 26, 41, 58 };
 		// output array
 		int[] output = input;
 
@@ -28,7 +28,7 @@ public class OriginalModel {
 					output[innerIterator + 1] = output[innerIterator];
 					innerIterator--;
 				}
-				output[innerIterator+1] = key;
+				output[innerIterator + 1] = key;
 			}
 		}
 

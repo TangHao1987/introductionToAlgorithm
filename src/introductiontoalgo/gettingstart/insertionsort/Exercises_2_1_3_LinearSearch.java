@@ -11,7 +11,7 @@ package introductiontoalgo.gettingstart.insertionsort;
  * @author Tang Hao
  * 
  */
-public class Exercises_2_1_3 {
+public class Exercises_2_1_3_LinearSearch {
 
 	public static void main(String[] args) {
 		int[] inputArray = { 10, 67, 43, 25, 78, 85 };
