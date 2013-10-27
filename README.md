@@ -7,7 +7,7 @@ following contains are already included in the repo:
 1. the basic model of insertionsort, all the exercises solutions of chapter 2.1, 
 which are stored in package introductiontoalgo.gettingstart.insertionsort
 
-2. the basic model of mergesort, partial exercises solutions of chapter 2.3, 
+2. the basic model of mergesort, all the exercises solutions of chapter 2.3, 
 which are stored in package introductiontoalgo.gettingstart.designingalgorithm
 
 
