@@ -39,7 +39,7 @@ public class Exercises_2_3_7_nlogn_sumOfTwoElement {
 			}
 		}
 		
-		System.out.println("No any two of integers in array that thier sum are " + input);
+		System.out.println("No any two of integers in array that their sum are " + input);
 	}
 	
 	 
