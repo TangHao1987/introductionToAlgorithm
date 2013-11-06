@@ -10,6 +10,9 @@ which are stored in package introductiontoalgo.gettingstart.insertionsort
 2. the basic model of mergesort, all the exercises solutions of chapter 2.3, 
 which are stored in package introductiontoalgo.gettingstart.designingalgorithm
 
+3. the basic model of maximum subarray problem by iteration method, partial exercises solutions of chapter 4.1,
+which are stored in package introductiontoalgo.dividedAndConquer.maximumSubarray
+
 
 following contain is ready but not updated yet:
 1. selection sort algorithm in exercise of chapter 2.2

@@ -1,6 +1,7 @@
-package introductionttoalgo.divideAndConquer.maximumSubarray;
+package introductiontoalgo.divideAndConquer.maximumSubarray;
 
 import introductiontoalgo.common.CommonLogics;
+import introductiontoalgo.common.MaxSubarrayOutputHolder;
 
 /**
  * This file is the basic model of maximum Subarray problem.
@@ -19,21 +20,21 @@ import introductiontoalgo.common.CommonLogics;
  */
 public class MaximumSubarrayAlgorithmBasicModel extends CommonLogics{
 	public static void main(String [] args){
-		int [] inputArray = {-12, 42, -1 , -23 ,32  -5 ,63 , -3 , -3 , 26, -42 ,-74  };
+		int [] inputArray = {-12, -42, -11 , -23 ,32  ,35 ,-36 , 13, -2 , -26, 42 ,-7  };
 		
 		printIntArray(inputArray, true);
 		
-		OutputHolder output = getMaximumSubarray(inputArray, 0, inputArray.length - 1);
+		MaxSubarrayOutputHolder output = getMaximumSubarray(inputArray, 0, inputArray.length - 1);
 		
 		printOutputHolder(output);
 	}
 	
-	public static OutputHolder getMaximumSubarray(int [] array, int startPoint, int endPoint){
+	public static MaxSubarrayOutputHolder getMaximumSubarray(int [] array, int startPoint, int endPoint){
 		if(startPoint < endPoint){
 			int middlePoint = (startPoint + endPoint)/2;
-			OutputHolder middleHolder = getMaximumMiddleSubarray(array, startPoint, middlePoint, endPoint);
-			OutputHolder leftHolder = getMaximumSubarray(array, startPoint, middlePoint);
-			OutputHolder rightHolder = getMaximumSubarray(array, middlePoint+1, endPoint);
+			MaxSubarrayOutputHolder middleHolder = getMaximumMiddleSubarray(array, startPoint, middlePoint, endPoint);
+			MaxSubarrayOutputHolder leftHolder = getMaximumSubarray(array, startPoint, middlePoint);
+			MaxSubarrayOutputHolder rightHolder = getMaximumSubarray(array, middlePoint+1, endPoint);
 			
 			if(middleHolder.getMaximumValue() >= leftHolder.getMaximumValue() && middleHolder.getMaximumValue() >= rightHolder.getMaximumValue())
 				return middleHolder;
@@ -42,23 +43,23 @@ public class MaximumSubarrayAlgorithmBasicModel extends CommonLogics{
 			else 
 				return rightHolder;
 		}else{
-		return new OutputHolder(startPoint, endPoint, array[startPoint]);
+		return new MaxSubarrayOutputHolder(startPoint, endPoint, array[startPoint]);
 		}
 	}
 	
-	private static void printOutputHolder(OutputHolder output){
-		System.out.println("Start Index: " + output.getStartIndex() + " End Index: " + output.getEndIndex() + " Maximum Sum: " + output.getMaximumValue());
+	private static void printOutputHolder(MaxSubarrayOutputHolder output){
+		System.out.println(output);
 	}
 	
-	private static OutputHolder getMaximumMiddleSubarray(int[] array,
+	private static MaxSubarrayOutputHolder getMaximumMiddleSubarray(int[] array,
 			int startPoint, int middlePoint, int endPoint) {
 		int startIndex = middlePoint;
 		int endIndex = middlePoint;
 		int maximumSum = 0;
 		
-		int maximumLeftSum = 0;
+		int maximumLeftSum = -1000;
 		int leftSum = 0;
-		int maximumRightSum = 0;
+		int maximumRightSum = -1000;
 		int rightSum = 0; 
 		//get maximum value from left hand side
 		for(int leftIndex = middlePoint ; leftIndex >= startPoint ; leftIndex--){
@@ -79,41 +80,7 @@ public class MaximumSubarrayAlgorithmBasicModel extends CommonLogics{
 		
 		maximumSum = maximumLeftSum + maximumRightSum;
 		
-		return new OutputHolder(startIndex, endIndex, maximumSum);
+		return new MaxSubarrayOutputHolder(startIndex, endIndex, maximumSum);
 	}
 
-
-
-	public static class OutputHolder{
-		private int startIndex;
-		private int endIndex;
-		private int maximumValue;
-		
-		
-		public OutputHolder(int startIndex, int endIndex, int maximumValue) {
-			super();
-			this.startIndex = startIndex;
-			this.endIndex = endIndex;
-			this.maximumValue = maximumValue;
-		}
-		public int getStartIndex() {
-			return startIndex;
-		}
-		public void setStartIndex(int startIndex) {
-			this.startIndex = startIndex;
-		}
-		public int getEndIndex() {
-			return endIndex;
-		}
-		public void setEndIndex(int endIndex) {
-			this.endIndex = endIndex;
-		}
-		public int getMaximumValue() {
-			return maximumValue;
-		}
-		public void setMaximumValue(int maximumValue) {
-			this.maximumValue = maximumValue;
-		}
-		
-	}
 }
