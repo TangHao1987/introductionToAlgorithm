@@ -1,4 +1,4 @@
-package heapsort.common;
+package introductiontoalgo.heapsort.common;
 
 
 public class BinaryTree {

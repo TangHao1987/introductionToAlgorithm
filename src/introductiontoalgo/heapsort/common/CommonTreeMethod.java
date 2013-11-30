@@ -1,4 +1,4 @@
-package heapsort.common;
+package introductiontoalgo.heapsort.common;
 
 public class CommonTreeMethod {
 	public static int getLeft(int i){
@@ -11,6 +11,11 @@ public class CommonTreeMethod {
 	
 	public static int getParent(int i){
 		return i/2;	
+	}
+	
+	public static boolean hasParent(int i){
+		if (i> 0) return true;
+		else return false;
 	}
 	
 	public static void maxHeapify(int [] array, int index, int heapSize){

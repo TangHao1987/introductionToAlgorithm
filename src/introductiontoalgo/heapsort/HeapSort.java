@@ -1,4 +1,4 @@
-package heapsort;
+package introductiontoalgo.heapsort;
 
 import introductiontoalgo.common.CommonLogics;
 
@@ -28,7 +28,7 @@ public class HeapSort extends CommonLogics {
 		if(array != null && array.length != 0){
 			int heapSize = array.length;
 			//build maximum heap before loop start
-			heapsort.common.CommonTreeMethod.buildMaxHeap(array, heapSize);
+			introductiontoalgo.heapsort.common.CommonTreeMethod.buildMaxHeap(array, heapSize);
 			while(heapSize > 1){
 				//exchange first and last element in the array
 				array[0] = array[0]^array[heapSize-1];
@@ -37,7 +37,7 @@ public class HeapSort extends CommonLogics {
 				
 				heapSize--;
 				//perform mayHeapify after doing exchange
-				heapsort.common.CommonTreeMethod.maxHeapify(array, 0, heapSize);
+				introductiontoalgo.heapsort.common.CommonTreeMethod.maxHeapify(array, 0, heapSize);
 			}
 		}
 		
