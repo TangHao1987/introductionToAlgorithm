@@ -1,9 +1,8 @@
 package introductiontoalgo.chapter5_ProbabilisticAnalysis;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
-import java.math.*;
 
 /**
  * This class used to show the algorithm how to use Ramdom(0,1) with return
